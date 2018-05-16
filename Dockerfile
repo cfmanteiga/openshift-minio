@@ -11,7 +11,8 @@ RUN mkdir -p /minio/bin \
 
 VOLUME ["/minio/data", "/minio/config"]
 
-RUN chgrp -R 0 /minio \
+RUN mkdir -p /minio/data /minio/config \
+ && chgrp -R 0 /minio \
  && chmod -R g+rwX /minio
 
 EXPOSE 9000
