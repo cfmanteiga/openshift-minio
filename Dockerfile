@@ -9,7 +9,7 @@ RUN mkdir -p /minio/bin \
  && curl -sL -o /minio/bin/minio $MINIO_DOWNLOAD_URL \
  && chmod +x /minio/bin/minio
 
-VOLUME ["/minio/data", "/minio/config"]
+VOLUME ["/minio/data"]
 
 RUN mkdir -p /minio/data /minio/config \
  && chgrp -R 0 /minio \
